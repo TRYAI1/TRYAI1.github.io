@@ -3,8 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <title>&#x5173;&#x4e8e;TRYAI</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
       console.log("这是一个彩蛋", document.referrer);
+      axios
+        .post("https://tryai4.com/track/access", {
+          ori: document.referrer,
+        })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log("-----------", err);
+        });
     </script>
     <style>
       /* From extension vscode.github */
